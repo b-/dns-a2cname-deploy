@@ -1,0 +1,25 @@
+networks:
+  default:
+    enable_ipv6: true
+configs:
+  Corefile:
+    content: |
+      .:53 {
+          # Enable logging
+          log
+
+          # Our custom plugin for olympus.ieitransit.com domain
+          coredns-a2cname olympus.ieitransit.com. {
+              target_suffix -via-9.shark-perch.ts.net
+              upstream [fd7a:115c:a1e0:b1a:0:9:a00:1]:53
+          }
+
+          # Forward everything else normally
+          forward . 100.100.100.100:53
+      }
+services:
+  coredns:
+    network_mode: host
+    image: ghcr.io/briorg/coredns-a2cname:latest
+    configs:
+      - Corefile
