@@ -20,7 +20,7 @@ x-ts-sidecar: &ts-sidecar
     #TS_STATE: "mem:"
     TS_STATE: "/ts_state"
     #TS_SERVE_CONFIG: /config/serve.json
-    #TS_HOSTNAME: generic-sidecar
+    TS_HOSTNAME: generic-sidecar
   #    ports:
   #      - "8120"
   #    devices:
@@ -40,7 +40,7 @@ services:
     <<: *ts-sidecar
     environment:
       <<: *ts-env
-      #TS_HOSTNAME: "coredns"
+      TS_HOSTNAME: "a2cname"
     extra_hosts:
       - host.docker.internal=host-gateway
     #ports:
