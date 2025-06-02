@@ -13,7 +13,7 @@ x-ts-sidecar: &ts-sidecar
     - ts_authkey
   environment: &ts-env
     TS_AUTHKEY: "file:/run/secrets/ts_authkey"
-    TS_EXTRA_ARGS: "--advertise-tags=tag:docker"
+    TS_EXTRA_ARGS: "--advertise-tags=tag:dns-server"
     TS_USERSPACE: false
     TS_ENABLE_HEALTH_CHECK: true
     TS_LOCAL_ADDR_PORT: 127.0.0.1:41234
