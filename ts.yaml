@@ -11,7 +11,7 @@ x-ts-sidecar: &ts-sidecar
     - ts_authkey
   environment: &ts-env
     TS_AUTHKEY: "file:/run/secrets/ts_authkey"
-    TS_EXTRA_ARGS: "--advertise-tags=tag:dns-server --advertise-routes=192.168.90.254/32 --accept-routes"
+    TS_EXTRA_ARGS: "--advertise-tags=tag:dns-server --advertise-routes=192.168.90.254/32,10.53.53.53/32 --accept-routes"
     TS_ENABLE_HEALTH_CHECK: true
     TS_LOCAL_ADDR_PORT: 127.0.0.1:41234
     #TS_STATE: "mem:"
