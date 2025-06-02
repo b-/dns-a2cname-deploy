@@ -1,8 +1,18 @@
+[[server]]
+name = "a2cname-server"
+tags = ["dns-a2cname", "instance"]
+[server.config]
+address = "https://a2cname.shark-perch.ts.net:8120"
+region = "pve1:vm/5353"
+enabled = true
+
+##
+
 [[stack]]
 name = "dns-a2cname_1"
 tags = ["dns-a2cname", "instance"]
 [stack.config]
-server = "localhost"
+server = "a2cname-server"
 git_account = "b-"
 repo = "b-/dns-a2cname-deploy"
 reclone = true
