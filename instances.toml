@@ -8,8 +8,8 @@ repo = "b-/dns-a2cname-deploy"
 reclone = true
 file_paths = ["compose.yaml", "ts.yaml"]
 environment = """
-#TS_AUTHKEY=[[OP__KOMODO__TAILSCALE_OP__CLIENT_SECRET]]?ephemeral=true
-TS_AUTHKEY=[[OP__KOMODO__TAILSCALE_OP__CLIENT_SECRET]]
+#TS_AUTHKEY=[[OP__KOMODO__DNS_SERVER_STATIC__CREDENTIAL]]?ephemeral=true
+TS_AUTHKEY=[[OP__KOMODO__DNS_SERVER_STATIC__CREDENTIAL]]
 """
 
 ##
