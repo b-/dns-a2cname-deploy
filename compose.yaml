@@ -4,7 +4,7 @@ networks:
 configs:
   Corefile:
     content: |
-      10.53.53.53:53 {
+      .:53 {
           # Enable logging
           log
           debug
