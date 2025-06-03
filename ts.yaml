@@ -40,7 +40,7 @@ services:
     environment:
       <<: *ts-env
       TS_HOSTNAME: "a2cname"
-    ports:
+    #ports:
 #      - 53:53/udp
   coredns:
     network_mode: service:coredns-ts
