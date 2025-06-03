@@ -36,11 +36,12 @@ x-ts-sidecar: &ts-sidecar
 services:
   coredns-ts:
     <<: *ts-sidecar
+    network_mode: host
     environment:
       <<: *ts-env
       TS_HOSTNAME: "a2cname"
     ports:
-      - 53:53/udp
+#      - 53:53/udp
   coredns:
     network_mode: service:coredns-ts
     ports: !reset []
