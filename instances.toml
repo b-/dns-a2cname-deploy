@@ -37,8 +37,15 @@ executions = [
 ]
 
 [[procedure.config.stage]]
+name = "Build 🔨"
+enabled = true
+executions = [
+  { execution.type = "RunBuild", execution.params.build = "coredns-a2cname", enabled = true }
+]
+
+[[procedure.config.stage]]
 name = "Deploy 🚀"
 enabled = true
 executions = [
-  { execution.type = "BatchDeployStackIfChanged", execution.params.pattern = "dns-a2cname_*", enabled = true }
+  { execution.type = "BatchDeployStack", execution.params.pattern = "dns-a2cname_*", enabled = true }
 ]
